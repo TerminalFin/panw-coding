@@ -105,6 +105,8 @@ function Invoke-CLICommand($var_Command, $fw_list) {
 
             # Generate FW_URL for $item
             $fw_url = "https://$item/api/?type=$action&cmd=$(Get-SplitCommand($var_Command))&key=$api_key"
+            
+            Write-Host "--- Executing command: '$var_command' on firewall at https://$item ---"
 
             if ($OS -eq "linux") {
                 $XML_Response = Invoke-WebRequest -SkipCertificateCheck -Uri $fw_url
@@ -117,6 +119,8 @@ function Invoke-CLICommand($var_Command, $fw_list) {
     }
     elseif ($var_Batch -eq "") {
 
+        Write-Host "--- Executing command: '$var_command' on firewall at https://$var_hostname ---"
+
         # Generate $fw_url
         $fw_url = "https://$var_hostname/api/?type=$action&cmd=$(Get-SplitCommand($var_Command))&key=$api_key"
 
@@ -127,7 +131,6 @@ function Invoke-CLICommand($var_Command, $fw_list) {
             $XML_Response = Invoke-WebRequest -Uri $fw_url
         }
         Show-XMLResponse $XML_Response
-        Invoke-Pause
     }
 }
 
