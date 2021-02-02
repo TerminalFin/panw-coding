@@ -158,8 +158,7 @@ while True:
         else:
             print('%14s' % versions[x],end='')
 
-    print('\nCurrent PAN-OS Version: ' + pan_ver)
-    up_ver = input('\n\nPlease type the PAN-OS version to download (type exactly as shown above): ')
+    up_ver = input('\n\nCurrent PAN-OS Version: ' + pan_ver + '\nPlease type the PAN-OS version to download (type exactly as shown above): ')
 
     # Make sure version selected is higher than current release
     if up_ver not in versions:
