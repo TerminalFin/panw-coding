@@ -151,7 +151,6 @@ else:
 
 while True:
     # Prompt for version of PAN-OS to download
-    print('\nCurrent PAN-OS Version: ' + pan_ver)
     print('\nList of available PAN-OS software\n',end='')
     for x in range(0,len(versions)):
         if x % 5 == 0 and x != 0:
@@ -159,7 +158,7 @@ while True:
         else:
             print('%14s' % versions[x],end='')
 
-    print('Current PAN-OS Version: ' + pan_ver)
+    print('\nCurrent PAN-OS Version: ' + pan_ver)
     up_ver = input('\n\nPlease type the PAN-OS version to download (type exactly as shown above): ')
 
     # Make sure version selected is higher than current release
