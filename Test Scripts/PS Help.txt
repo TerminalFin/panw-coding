@@ -1,0 +1,12 @@
+<#
+.SYNOPSIS
+Make a VHD File bootable
+.DESCRIPTION
+Converts a raw *.vhd file to a bootable *.vhd file
+.PARAMETER Path
+File path to a VHD File to be made active
+.EXAMPLE
+.\Make-VHDBootable.ps1 -verbose -path C:\15\install.vhdx
+.NOTES
+Copyright Microsoft Corp, All Rights reserved.
+#>

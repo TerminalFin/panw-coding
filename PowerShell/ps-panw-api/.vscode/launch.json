@@ -1,0 +1,79 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "PowerShell: Launch Current File",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${file}",
+            "cwd": "${file}"
+        },
+        {
+            "name": "Launch (DisplayAll=true, PauseBetweenFW=true, command=show system info)",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${file}",
+            "cwd": "${file}",
+            "args": ["-Command", "'show system info'", "-Batch", "./fw.txt", "-DisplayAll", "$true", "-PauseBetweenFW", "$true"]
+        },
+        {
+            "name": "Launch (DisplayAll=true, PauseBetweenFW=false, command=show system info)",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${file}",
+            "cwd": "${file}",
+            "args": ["-Command", "'show system info'", "-Batch", "./fw.txt", "-DisplayAll", "$true", "-PauseBetweenFW", "$false"]
+        },
+        {
+            "name": "Launch (DisplayAll=false, PauseBetweenFW=false, command=show system info)",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${file}",
+            "cwd": "${file}",
+            "args": ["-Command", "'show system info'", "-Batch", "./fw.txt", "-DisplayAll", "$false", "-PauseBetweenFW", "$false"]
+        },
+        {
+            "name": "Launch (DisplayAll=false, PauseBetweenFW=true, command=show system info)",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${file}",
+            "cwd": "${file}",
+            "args": ["-Command", "'show system info'", "-Batch", "./fw.txt", "-DisplayAll", "$false", "-PauseBetweenFW", "$true"]
+        },
+        {
+            "name": "Launch (DisplayAll=false, PauseBetweenFW=true, command=NULL)",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${file}",
+            "cwd": "${file}",
+            "args": ["-Batch", "./fw.txt", "-DisplayAll", "$false", "-PauseBetweenFW", "$true"]
+        },
+        {
+            "name": "Launch (DisplayAll=true, PauseBetweenFW=false, command=NULL)",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${file}",
+            "cwd": "${file}",
+            "args": ["-Batch", "./fw.txt", "-DisplayAll", "$true", "-PauseBetweenFW", "$false"]
+        },
+        {
+            "name": "Launch (DisplayAll=false, PauseBetweenFW=false, command=NULL)",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${file}",
+            "cwd": "${file}",
+            "args": ["-Batch", "./fw.txt", "-DisplayAll", "$false", "-PauseBetweenFW", "$false"]
+        },
+        {
+            "name": "Launch (DisplayAll=true, PauseBetweenFW=true, command=NULL)",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${file}",
+            "cwd": "${file}",
+            "args": ["-Batch", "./fw.txt", "-DisplayAll", "$true", "-PauseBetweenFW", "$true"]
+        }
+    ]
+}

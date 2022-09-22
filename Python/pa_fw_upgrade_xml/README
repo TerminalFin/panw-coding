@@ -1,0 +1,16 @@
+Palo Alto Networks Firewall (Strata) Firewall Upgrade Tool
+By Josh Levine
+Systems Engineer - Army/USSOCOM
+
+--- Same script as the original but intended to minimize module dependencies ---
+--- This script is dependent upon the packaging module for version checking ---
+
+This script automates the process of upgrading a Palo Alto Networks (Strata) firewall. The script prompts for two sets of credentials:
+
+1. User with XML API permissions - Used to retrieve user API keys, a list of available PAN-OS versions, and download/install the latest content update.
+2. Superuser account - Used to retrieve and install the selected PAN-OS versions
+
+TODO
+
+1. Check for PAN-OS prerequisities (i.e., upgrade to 9.0 before going to 9.0.7, etc.)
+2. Error handling

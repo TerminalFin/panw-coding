@@ -1,0 +1,32 @@
+import urllib3
+import xml.etree.ElementTree as ET
+
+OS_VER_URL      = '/api/?type=op&cmd=<show><system><info></info></system></show>&key='
+KEYGEN_URL      = '/api/?type=keygen&user='
+CHECK_SW_URL    = '/api/?type=op&cmd=<request><system><software><check></check></software></system></request>&key='
+CONTENT_URL     = '/api/?type=op&cmd=<request><content><upgrade><download><latest/></download></upgrade></content></request>&key='
+JOB_CHECK_URL   = '/api/?type=op&cmd=<show><jobs><id>'
+JOB_CHECK_URL2  = '</id></jobs></show>&key='
+CU_INSTALL_URL  = '/api/?type=op&cmd=<request><content><upgrade><install><version>latest</version></install></upgrade></content></request>&key='
+PANOS_REQ_URL1  = '/api/?type=op&cmd=<request><system><software><download><version>'
+PANOS_REQ_URL2  = '</version></download></software></system></request>&key='
+PANOS_UP_URL1   = '/api/?type=op&cmd=<request><system><software><install><version>'
+PANOS_UP_URL2   = '</version></install></software></system></request>&key='
+REBOOT_URL      = '/api/?type=op&cmd=<request><restart><system></system></restart></request>&key='
+FIREWALL_IP 	= 'INSERT_HERE'
+ADMIN 			= 'INSERT_HERE'
+PASSWORD 		= 'INSERT_HERE'
+
+
+
+# Define the request variable to be used for REST API calls
+request = urllib3.HTTPSConnectionPool(FIREWALL_IP, cert_reqs='CERT_NONE',assert_hostname=False)
+
+# Conduct the actual query using HTTP GET 
+response = request.request('GET', KEYGEN_URL + ADMIN + '&password=' + PASSWORD)
+
+# Parse XML response
+output = ET.fromstring(response.data)
+
+# Extract key
+api_key = output.find('result/key').text

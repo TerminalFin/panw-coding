@@ -1,0 +1,6 @@
+Palo Alto Networks Firewall (Strata) Tech-support File Generation Tool
+By Josh Levine
+Systems Engineer - Army/USSOCOM
+Python-based (3.7)
+
+This project is a simple python script to generate and retrieve a Palo Alto Networks firewall (Strata platform) tech-support dump file. The TSF is saved to the working directory of the script. 

@@ -1,0 +1,24 @@
+Palo Alto Networks Firewall (Strata) XML API Powershell Tool
+By Josh Levine
+Systems Engineer - Army/USSOCOM
+PowerShell -Core Based
+
+These scripts are two of my first attempts at producing PowerShell alternatives to the popular panxapi.py scripts created by Kevin Steves at Palo Alto Networks.
+My hope is to provide an alternative for environments that aren't permitted to use/install python.
+
+---
+
+This is a simple PowerShell script to query NTP status across a list of firewalls. The intent is to ensure NTP synchronization is enabled and standardized across an enterprise. There are two versions of this script:
+
+ps-panw-ntpquery.ps1 - Linux/MacOS-based script to parse through ./fw_list.txt, a line-delimited list of firewall IP/FQDNs and output the status to ./fw_ntp_status.txt
+
+ps-panw-ntpquery_win64.ps1 - Same as the original script but built for the Windows x64 platform. 
+- This build is necessary due to the system-level differences in performing certificate validity checks on the PowerShell and PowerShell Core platforms.
+
+Both scripts operate in the same fashion with the exception of how self-signed certificates are disregarded.
+
+TODO:
+
+1. Add argument-based options for processing firewalls (individually, csv list, dynamically through an automation tool such as XSOAR or Phantom)
+2. Add the ability to change NTP configurations
+3. Add the ability to force NTP resync

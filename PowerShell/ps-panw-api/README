@@ -1,0 +1,25 @@
+Palo Alto Networks Firewall (Strata) XML API Powershell Tool
+By Josh Levine
+Systems Engineer - Army/USSOCOM
+PowerShell for Windows (non-core)
+
+This script is my attempt to provide an alternative to the panxapi scripts produced by Kevin Steves at Palo Alto Networks. This script is designed for environments that aren't permitted to use/install python.
+
+--- This is a work-in-progress script and functionality will change frequently. It is by no means intended to be used in production in its current instantiation ---
+
+COMPLETED:
+
+1. Retrieve API keys
+2. Generate tech-support files (Retrieval is pending)
+
+TODO:
+
+1. Operational-level commands
+2. Configuration (Set/Get) commands
+3. Reporting commands
+4. Logging commands
+5. Import and export commands for configurations and device states
+6. Perform configuration commits
+7. Feed in list of firewall IP/FQDNs to perform commands, where supported, against.
+8. Parameterize the script for specific command execution (bypassing the menu system)
+9. Plenty more to come as the field puts this script under examination and testing
